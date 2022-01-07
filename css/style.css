@@ -1,0 +1,409 @@
+	/************ Beginning of Body CSS ************/
+	/***********************************************/
+
+	* {
+		padding: 0;
+		margin:  0;
+		box-sizing: border-box;
+	}
+
+	.container-fluid {
+		max-width: 98%;
+		background-color: rgba(56,215,85, 0.1);
+		margin: auto;
+	}
+
+	a:link {
+		text-decoration: none;
+		color: rgb(30, 30, 30);
+	}
+
+	.title-div {
+		color: rgb(90, 90, 90);
+		text-decoration-line: underline;
+	}
+	/************* Ending of Body CSS ***********/
+	/********************************************/
+
+
+
+	/********* Beginning of Index Page CSS *********/
+	/***********************************************/
+
+	/***** covid *****/
+	#indxrw1 {
+		min-height: 20px;
+		color: rgb(255,111,97);
+		background-color: #f3f3f3 !important;
+	}
+
+	/***** social *****/
+	#indxrw2 {
+		min-height: 40px;
+		padding-top: 5px;
+		color: rgb(0,0,255);
+		background-color: rgba(56,215,85, 0.3) !important;
+	}
+
+	.fa-facebook-f, .fa-instagram {
+		color: rgb(30, 30, 30);
+	}
+
+	/***** Navbar *****/
+	#indxrw3 {
+		margin-bottom: 35px;
+		min-height: 60px;
+		background-color: #f5f5f5 !important;
+	}
+
+	#indxrw3col1 h5 {
+		color: rgb(90, 90, 90);
+	}
+
+	.header_span1 {
+		color: green;
+		font-size: 23px;
+	}
+
+	.header_span2 {
+		color: blue;
+		font-size: 23px;
+	}
+
+	#pagesearch {
+		border: 1px solid green;
+	}
+
+	/***** Category & Banner *****/
+	#indxrw4 {
+		margin-bottom: 35px;
+		min-height: 450px;
+		padding-top: 5px;
+	}
+
+	#indxrw4col1 ul li{
+		border-bottom: 1px solid green;
+		width: 150px;
+	}
+
+	/***** About Us *****/
+	#indxrw5 {
+		margin-bottom: 35px;
+		min-height: 150px;
+	}
+
+	#r3c1  {
+		background: url("images/skinsol_logo.png");
+		background-size: cover;
+		background-repeat: none;
+		background-blend-mode: lighten;
+	}
+
+	/***** unique selling point *****/
+	#indxrw6 {
+		margin-bottom: 35px;
+		min-height: 250px;
+		padding-top: 13px;
+		padding-bottom: 3px;
+	}
+
+	.feature {
+			 position: relative;
+	}
+
+	.feature .feature-col {
+	    margin-bottom: 30px;
+	}
+
+	.feature .feature-content {
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+	    padding: 30px 15px;
+	    text-align: center;
+	    background: #ffffff;
+	}
+
+	.feature .feature-content i {
+	    color: green;
+	    font-size: 60px;
+	    margin-bottom: 30px;
+	}
+
+	.feature .feature-content h2 {
+	    font-size: 18px;
+	}
+
+	.feature .feature-content p {
+	    font-size: 15px;
+	    margin: 0;
+	}
+
+	/***** products one *****/
+	#indxrw7 {
+		margin-bottom: 35px;
+		min-height: 200px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+
+	.indxrw7col {
+		transition: transform 0.5s;
+	}
+
+	.indxrw7col:hover {
+		transform: translateY(-10px);
+	}
+
+	/***** referral *****/
+	#indxrw8 {
+		margin-bottom: 35px;
+		min-height: 250px;
+		padding-top: 10px;
+	}
+
+	.indxrw8col {
+	    text-align: center;
+	    transition: transform 0.5s;
+	}
+
+	.indxrw8col:hover {
+	    transform: translate3d(10px, 10px, 15px);
+	}
+
+	.indxrw8col img {
+	    width: 70px;
+	    height: 70px;
+	    border-radius: 50%;
+	}
+
+
+	/***** products two *****/
+	#indxrw9 {
+		margin-bottom: 35px;
+		min-height: 200px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+
+	/***** Advert Two *****/
+	#indxrw10 {
+		margin-bottom: 25px;
+		min-height: 150px;
+	}
+
+	#indxrw10col1 {
+		padding-top: 8px;
+	}
+
+	#indxrw10col2 {
+		padding-top: 20px;
+	}
+
+	#indxrw10col3 {
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("images/christmas.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		color: rgb(210, 210, 210);
+		padding-top: 20px;
+	}
+
+	/***** base address *****/
+	#indxrw11 {
+		margin-bottom: 5px;
+		min-height: 300px;
+	}
+
+	/***** footer *****/
+	#indxrw12 {
+		min-height: 50px;
+		padding-top: 5px;
+	}
+	/********** Ending of Index Page CSS ***********/
+	/***********************************************/
+
+
+
+	/********** Beginning of Sign Up CSS ***********/
+	/***********************************************/
+	#sgnrw {	
+		margin-top: 20px;
+		min-height: 400px;
+		display: flex;
+		justify-content: space-between;
+		padding-top: 3px;
+		margin-bottom: 20px;
+	}
+
+	#sgnrw1c1, #sgnrw1c2, #sgnrw1c3 {
+		flex-basis: 30%;
+		max-height: 350px;
+		text-align: center;
+	}
+
+	#sgnrw1c1 img, #sgnrw1c3 img {
+		width: 90%;
+	}
+
+	/********** Ending of Sign Up CSS *************/
+	/***********************************************/
+
+
+
+	/********** Beginning of Login CSS ***********/
+	/***********************************************/
+	#lognrw {	
+		margin-top: 20px;
+		min-height: 400px;
+		display: flex;
+		justify-content: space-between;
+		padding-top: 3px;
+		margin-bottom: 20px;
+	}
+
+	#lognrw1c1, #lognrw1c2, #lognrw1c3 {
+		flex-basis: 30%;
+		max-height: 350px;
+		text-align: center;
+	}
+
+	#lognrw1c1 img, #lognrw1c3 img {
+		width: 90%;
+	}
+
+	/********** Ending of Login CSS *************/
+	/***********************************************/
+
+
+
+
+	/********** Beginning of About Us CSS ***********/
+	/***********************************************/
+	#abtusrw1 {
+		margin: auto;
+	}
+
+	#abtusrw2 {
+		margin: auto;
+	}
+
+	/********** Ending of About Us CSS ***********/
+	/***********************************************/
+
+
+
+
+	/********** Beginning of Admin page CSS ***********/
+	/***********************************************/
+	#admnrw1 {
+		text-align: center;
+		text-decoration: underline;
+		padding: 10px;
+
+	}
+
+	#admnrw2 {
+		display: flex;
+		flex-direction: row;
+		width: 80%;
+		margin: auto;
+		min-height: 400px;
+	}
+
+	#admnrw2 a {
+		text-decoration: none;
+		color: rgb(255, 255, 255);
+	}
+
+	#admnrw2c1, #admnrw2c2, #admnrw2c3, #admnrw2c4, #admnrw2c5, #admnrw2c6, #admnrw2c7, #admnrw2c8 {
+		flex-basis: 25%;
+		height: 150px;
+		border: 1px solid orange;
+		background-color: olivedrab;
+		text-align: center;
+		padding-top: 5px;
+	}
+
+	/********** Ending of Admin Page CSS *************/
+	/***********************************************/
+
+
+
+	/********** Beginning of Customers Dashboard CSS ***********/
+	/**********************************************************/
+	#custrw1 {
+		text-align: center;
+		text-decoration: underline;
+		padding: 10px;
+	}
+
+	#custrw {
+		display: flex;
+		flex-direction: row;
+		min-height: 800px;
+		justify-content: space-between;
+	}
+
+	#custrw2 {
+		flex-basis: 15%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#custrw2 a {
+		text-decoration: none;
+		color: rgb(255, 255, 255);
+	}
+
+	#custrw2c1 {
+		height: 200px;
+		border: 1px solid orange;
+		background-color: olive;
+		text-align: center;
+		padding-top: 5px;
+		color: rgb(255, 255, 255);
+	}
+
+	#custrw2c1 img {
+		width: 85%;
+		margin: auto;
+		border-radius: 50%;
+		height: 150px;
+	}
+
+	#custrw2c2, #custrw2c3, #custrw2c4, #custrw2c5, #custrw2c6, #custrw2c7, #custrw2c8, #custrw2c9 {
+		height: 50px;
+		border: 1px solid orange;
+		background-color: olive;
+		text-align: center;
+		padding-top: 5px;
+	}
+
+	#custrw3 {
+		flex-basis: 80%;
+	}
+
+	/********** Ending of Customers Dashboard CSS *************/
+	/*********************************************************/
+
+
+
+
+	/********** Beginning of Whatsapp CSS ***********/
+	/***********************************************/
+	.whatsapp {
+		position: fixed;
+		bottom: 2%;
+		right: 1%;
+		height: 70px;
+		width: 4%;
+
+	}
+	.whatsapp img {
+		width: 60%;
+		border-radius: 50%;
+		opacity: 1;
+	}
+
+	/********** Ending of Whatsapp CSS *************/
+	/***********************************************/
