@@ -108,7 +108,7 @@
 	}
 
 	.feature {
-			 position: relative;
+		position: relative;
 	}
 
 	.feature .feature-col {
@@ -291,6 +291,15 @@
 	/***********************************************/
 
 
+	/********** Beginning of Admin Dashboard **********/
+	/**************************************************/
+	#admrw1 {
+		border: 1px solid red;
+	}
+
+
+	/********** Ending of Admin Dashboard ************/
+	/*************************************************/
 
 
 	/********** Beginning of Admin page CSS ***********/
@@ -299,7 +308,6 @@
 		text-align: center;
 		text-decoration: underline;
 		padding: 10px;
-
 	}
 
 	#admnrw2 {
@@ -315,8 +323,8 @@
 		color: rgb(255, 255, 255);
 	}
 
-	#admnrw2c1, #admnrw2c2, #admnrw2c3, #admnrw2c4, #admnrw2c5, #admnrw2c6, #admnrw2c7, #admnrw2c8 {
-		flex-basis: 25%;
+	#admnrw2c1, #admnrw2c2 {
+		flex-basis: 35%;
 		height: 150px;
 		border: 1px solid orange;
 		background-color: olivedrab;
@@ -371,7 +379,7 @@
 		height: 150px;
 	}
 
-	#custrw2c2, #custrw2c3, #custrw2c4, #custrw2c5, #custrw2c6, #custrw2c7, #custrw2c8, #custrw2c9 {
+	#custrw2c2, #custrw2c3, #custrw2c4, #custrw2c5, #custrw2c6, #custrw2c7, #custrw2c8 {
 		height: 50px;
 		border: 1px solid orange;
 		background-color: olive;
@@ -386,6 +394,64 @@
 	/********** Ending of Customers Dashboard CSS *************/
 	/*********************************************************/
 
+
+
+	/**************** Beginning of Cart CSS ******************/
+	/**********************************************************/
+	#cartrw1 {
+		text-align: center;
+		text-decoration: underline;
+		padding: 10px;
+	}
+
+	#cartrw {
+		display: flex;
+		flex-direction: row;
+		min-height: 800px;
+		justify-content: space-between;
+	}
+
+	#cartrw2 {
+		flex-basis: 15%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#cartrw2 a {
+		text-decoration: none;
+		color: rgb(255, 255, 255);
+	}
+
+	#cartrw2c1 {
+		height: 200px;
+		border: 1px solid orange;
+		background-color: olive;
+		text-align: center;
+		padding-top: 5px;
+		color: rgb(255, 255, 255);
+	}
+
+	#cartrw2c1 img {
+		width: 85%;
+		margin: auto;
+		border-radius: 50%;
+		height: 150px;
+	}
+
+	#cartrw2c2, #cartrw2c3, #cartrw2c4, #cartrw2c5, #cartrw2c6, #cartrw2c7, #cartrw2c8 {
+		height: 50px;
+		border: 1px solid orange;
+		background-color: olive;
+		text-align: center;
+		padding-top: 5px;
+	}
+
+	#cartrw3 {
+		flex-basis: 75%;
+	}
+
+	/***************** Ending of Cart CSS ********************/
+	/*********************************************************/
 
 
 

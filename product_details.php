@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 include_once("header.php");
 include_once("classes.php");
 
@@ -34,7 +34,7 @@ include_once("classes.php");
                     	
                     <div>
                     	<?php 
-                    		if(isset($_POST['btn-buy1']) &&  $_POST['btn-buy1']=='PAY NOW') {
+                    		if(isset($_POST['btn-buy1']) &&  $_POST['btn-buy1']=='ADD TO CART') {
                     			if(empty($_POST['quantity'])) {
                     				echo "<div class='alert alert-danger'>Quantity must carry a value from 1 and above (No decimals also)</div>";
                     			}
@@ -47,9 +47,9 @@ include_once("classes.php");
 									$newcart = $objcart->addToCart($_POST['product_name'], $_POST['quantity'], $_POST['product_price'], $session_id);
 									
 									// to go a step further, add a special key to authenticate who is in session.
-									$_SESSION['mem'] = "@@Exec_2090%";
+									$_SESSION['skinsol'] = "2021+Skins@_||";
 									if(isset($_SESSION['cust_email'])) {
-										header("Location: customer_dashboard.php?msg=Welcome back");
+										header("Location: cart.php?msg=Welcome back");
 									}
 									else {
 									header("Location: login.php?msg=Successfuly added to cart");
@@ -64,7 +64,7 @@ include_once("classes.php");
                     		<input type="number" name="quantity" id="qty" size="2px" style="text-align:center">
                     		<input type="hidden" name="product_price" value="<?php echo $value['product_price'] ?>">
                     		<br><br>
-                    		<input type="submit" class="btn btn-success" name="btn-buy1" value="PAY NOW">
+                    		<input type="submit" class="btn btn-success" name="btn-buy1" value="ADD TO CART">
                     	</form>
                     	
                     </div><br>

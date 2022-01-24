@@ -271,10 +271,11 @@ if (!isset($_SESSION['mycart'])) {
       <div class="col-md-5 indxrw10col" id="indxrw10col1">
           <h6>NEWSLETTER</h6>
           <p>Subscribe to our newsletter for updates on our latest offers!</p>
-          <form method="post" action="" class="form-group form-inline">
+          <form method="POST" action="email-script.php" class="form-group form-inline">
             <input type="email" name="user_email" id="user_email" placeholder="Enter your email address" class="form-control">&nbsp;
             <input type="submit" name="submit_btn" class="btn btn-dark" value="SUBMIT" class="form-control">
           </form>
+
       </div>
 
       <div class="col-md-3 indxrw10col" id="indxrw10col2">

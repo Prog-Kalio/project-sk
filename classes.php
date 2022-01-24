@@ -241,6 +241,11 @@ include_once("constants.php");
 		public $cust_phone;
 		public $cust_email;
 		public $cust_password;
+		public $cust_image;
+		public $cust_firstname;
+		public $cust_lastname;
+		public $cust_gender;
+		public $cust_address;
 		public $dbcon; //database connection handler
 
 
@@ -324,6 +329,25 @@ include_once("constants.php");
 			
 		}
 
+		// Get specific Users information
+		function getSpecificCustomers($cust_id) {
+			$sql = "SELECT * FROM customers WHERE cust_id='$cust_id'";
+
+			$result = $this->dbcon->query($sql);
+			$rows = array();
+
+			if ($this->dbcon->affected_rows > 0) {
+				while ($row = $result->fetch_array()) {
+					$rows[] = $row;
+				}
+				return $rows;
+			}
+			else {
+				return $rows;
+			}
+			
+		}
+
 
 		function login($cust_email, $cust_password) {
 
@@ -344,6 +368,135 @@ include_once("constants.php");
 	}
 
 // End  MyCustomers Class Diagram
+
+
+
+// Start My Customers Class Diagram
+
+// create class
+	class MyPayingCustomers {
+
+		// create variables/properties/attributes
+		public $cust_firstname;
+		public $cust_lastname;
+		public $cust_phone;
+		public $cust_email;
+		public $cust_gender;
+		public $cust_image;
+		public $cust_address;
+		public $dbcon; //database connection handler
+
+
+		//create method/function/operation
+		function __construct() {
+			$this->dbcon = new MySqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+			if ($this->dbcon->connect_error){
+				die("Connection failed".$this->dbcon->connect_error)."<br>";
+			}
+			// else {
+			// 	echo "Connection successful";
+			// }
+		}
+
+
+
+		public function addPayingCustomers($cust_firstname, $cust_lastname, $cust_phone, $cust_email, $cust_gender, $cust_image, $cust_address) {
+		
+		// first define variables
+		$myfile_name = $_FILES['cust_image']['name'];
+		$myfile_type = $_FILES['cust_image']['type'];
+		$myfile_tmp_name = $_FILES['cust_image']['tmp_name'];
+		$myfile_error = $_FILES['cust_image']['error'];
+		$myfile_size = $_FILES['cust_image']['size'];
+
+		// validate
+		$errors = array();
+
+		if ($myfile_error > 0) {
+			$errors[] = "You are yet to upload a file";
+		}
+
+		if ($myfile_size > 2097512) {
+			$errors[] = "Max file size is 2MB";
+		}
+
+		$myextensions = array("jpeg", "jpg", "png", "svg");
+
+		$myfile_ext = explode(".", $myfile_name);
+
+		$myfile_ext = end($myfile_ext);
+
+		if (!in_array(strtolower($myfile_ext), $myextensions)) {
+			$errors[] = $myfile_ext." file format not supported!";
+		}
+		if (!empty($errors)) {
+			foreach ($errors as $key => $value) {
+				return "<div class='alert alert-danger'>$value</div>";
+			}
+		}
+		
+		$myfolder = "newuploads/";
+
+		$myfilename = time().rand().".".$myfile_ext;
+
+		$destination = $myfolder.$myfilename;
+
+		if(move_uploaded_file($myfile_tmp_name, $destination)) {
+
+			$sql = "INSERT INTO `payingclients` (`cust_firstname`, `cust_lastname`, `cust_phone`, `cust_email`, `cust_gender`, `cust_image`, `cust_address`) VALUES ('$cust_firstname', '$cust_lastname', '$cust_phone', '$cust_email', '$cust_gender', '$myfilename', '$cust_address')";
+			// var_dump($sql);
+			$result = $this->dbcon->query($sql);
+			 if($this->dbcon->affected_rows == 1) {
+			 	echo "<p>Profile added successfuly</p>";
+			 	// instead of returning true, let's create session since we want to proceed to dashboard
+				// so create session variables
+					
+					$_SESSION['pcust_id'] = $this->dbcon->insert_id;
+					$_SESSION['cust_firstname'] = $cust_firstname;
+					$_SESSION['cust_lastname'] = $cust_lastname;
+					$_SESSION['cust_phone'] = $cust_phone;
+					$_SESSION['cust_email'] = $cust_email;
+					$_SESSION['cust_gender'] = $cust_gender;
+					$_SESSION['cust_image'] = $myfilename;
+					$_SESSION['cust_address'] = $cust_address;
+				
+					// to go a step further, add a special key to authenticate who is in session.
+					$_SESSION['skinsol'] = "2021+Skins@_||";
+
+			 	// return true;
+			 }
+			 else {
+			 	echo "could not be added".$this->dbcon->error;
+			 	// return false;
+			 }
+		}
+	}
+
+
+	// Get all Users information
+		function getPayingCustomers() {
+			$sql = "SELECT * FROM `payingclients`";
+
+			$result = $this->dbcon->query($sql);
+			$rows = array();
+
+			if ($this->dbcon->affected_rows > 0) {
+				while ($row = $result->fetch_array()) {
+					$rows[] = $row;
+				}
+				return $rows;
+			}
+			else {
+				return $rows;
+			}
+			
+		}
+
+
+	}
+
+// End  MyPayingCustomers Class Diagram
 
 
 
@@ -704,6 +857,148 @@ include_once("constants.php");
 // 	}
 
 // // End  AllDetails Class Diagram
+
+
+
+
+// Start MyAdmin Class Diagram
+
+// create class
+	class MyAdmin {
+
+		// create variables/properties/attributes
+		public $admin_phone;
+		public $admin_email;
+		public $admin_password;
+		public $admin_image;
+		public $admin_firstname;
+		public $admin_lastname;
+		public $admin_gender;
+		public $admin_address;
+		public $dbcon; //database connection handler
+
+
+		//create method/function/operation
+		function __construct() {
+			$this->dbcon = new MySqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+			if ($this->dbcon->connect_error){
+				die("Connection failed".$this->dbcon->connect_error)."<br>";
+			}
+			// else {
+			// 	echo "Connection successful";
+			// }
+		}
+
+
+
+		function addAdmin($admin_phone, $admin_email, $admin_password) {
+
+		// encrypt password
+		$encr_pswd = md5($admin_password);
+
+		$sql = "INSERT INTO admin(admin_phone, admin_email, admin_password) VALUES('$admin_phone', '$admin_email', '$encr_pswd')";
+
+		// check result
+		$result = $this->dbcon->query($sql);
+
+			if ($this->dbcon->affected_rows == 1) {
+				// instead of returning true, let's create session since we want to proceed to dashboard
+				// so create session variables
+					
+					$_SESSION['admin_id'] = $this->dbcon->insert_id;
+					$_SESSION['admin_phone'] = $admin_phone;
+					$_SESSION['admin_email'] = $admin_email;
+				
+					// to go a step further, add a special key to authenticate who is in session.
+					$_SESSION['skinsol'] = "2021+Skins@_||";
+
+				// next is to redirect to dashboard
+				return true;
+			}
+			else {
+				return "Contact could not be added <br>";
+			}
+
+		}
+
+
+		// check if email address exists
+		function checkAdminEmailAddress($admin_email) {
+
+			// write query
+			$sql = "SELECT admin_email FROM admin WHERE admin_email='$admin_email'";
+			 // run the query
+			$result = $this->dbcon->query($sql);
+			if ($this->dbcon->affected_rows == 1) {
+				return false;
+			}
+			else {
+				return false;
+			}
+		}
+
+
+		// Get all Users information
+		function getAdmin() {
+			$sql = "SELECT * FROM admin";
+
+			$result = $this->dbcon->query($sql);
+			$rows = array();
+
+			if ($this->dbcon->affected_rows > 0) {
+				while ($row = $result->fetch_array()) {
+					$rows[] = $row;
+				}
+				return $rows;
+			}
+			else {
+				return $rows;
+			}
+			
+		}
+
+		// Get specific Users information
+		function getSpecificAdmin($admin_id) {
+			$sql = "SELECT * FROM admin WHERE admin_id='$admin_id'";
+
+			$result = $this->dbcon->query($sql);
+			$rows = array();
+
+			if ($this->dbcon->affected_rows > 0) {
+				while ($row = $result->fetch_array()) {
+					$rows[] = $row;
+				}
+				return $rows;
+			}
+			else {
+				return $rows;
+			}
+			
+		}
+
+
+		function loginAdmin($admin_email, $admin_password) {
+
+			$encr_pswd = md5($admin_password);
+			$sql = "SELECT admin_email FROM admin WHERE admin_email='$admin_email' AND admin_password='$admin_password'";
+			$result = $this->dbcon->query($sql);
+			
+			if ($result->num_rows==1) {
+				return true;
+			} 
+			else {
+				return false;
+			}
+			
+		}
+
+
+	}
+
+// End  MyAdmin Class Diagram
+
+
 
 
 ?>

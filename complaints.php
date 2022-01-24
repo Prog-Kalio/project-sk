@@ -14,7 +14,7 @@ else {
 	<div class="container-fluid">
 
 		<div id="custrw1">
-			<h5>Customers Dashboard</h5>
+			<h5>COMPLAINTS</h5>
 		</div>
 
 		<div id="custrw">
@@ -63,8 +63,26 @@ else {
 
 			<div id="custrw3">
 				<div id="custrw3c1">
-					<p><b>If you got here, then we are good to go!!!</b></p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p><b>If you have any compaints, please fill the form below!!!</b></p>
+					<div id="div-NewUser" class="col-md-5">
+            
+              <form id="form-newUser" action="" method="post" class="form-group" name="NewUser-Form" enctype="multipart/form-data">
+                
+                <label>Firstname</label>
+                <input type="text" name="comp_firstname" class="form-control"> 
+                <label>Lastname</label>
+                <input type="text" name="comp_lastname" class="form-control">
+                <label>Phone Number</label>
+                <input type="text" name="comp_phone" class="form-control">
+                <label>Email Address</label>
+                <input type="email" name="comp_email" class="form-control">
+                <label>Complaint</label>
+                <textarea id="comp_address" name="comp_address" class="form-control" rows="3"></textarea>
+                <label>File</label>
+                <input type="file" name="comp_image" class="form-control">
+                <small>Images only (png, jpg, jpeg, gif) with max-size: 2MB</small><br>
+                <input type="submit" id="cust_signup_btn" class="btn btn-block btn-dark" name="cust_signup_btn" value="SEND">
+              </form>
 				</div>
 			</div>
 		</div>

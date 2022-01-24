@@ -39,8 +39,8 @@
 	 <div class="container-fluid" style="background-color: #272932; color: rgb(210, 210, 210);">
 	    <div class="row" id="indxrw12">
 	      <div class="col-md-12 text-center" id="r11c1">
-	          <p>Designed by &copy; eIndustries 2021. All rights reserved</p>
-	        </div>
+	          <p>Designed by &copy; eIndustries 2021. All rights reserved.</p>
+	      </div>
 	    </div>
 	 </div>
 
@@ -60,6 +60,15 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 
+			$('#editlink').click(function(){
+						$('#quantity').hide();
+						$('#editquantity').show();	
+				})
+
+				$('#deletelink').click(function(){
+						$('#deleteitem').show();
+						$('#deletelink').hide();	
+				})
 		
 		});
 
