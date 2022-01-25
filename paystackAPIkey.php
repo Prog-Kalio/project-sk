@@ -1,5 +1,3 @@
 Test Secret Key:
 sk_test_90bf0075eb2edd535d218390dbbea8453017ecac
 
-Live Key:
-sk_live_131afdab46b34c4867dbef30a07b7e3435400b64
